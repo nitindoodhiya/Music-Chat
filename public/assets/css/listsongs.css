@@ -1,0 +1,41 @@
+body div div ul.listingul{
+    padding: 1pc;
+    list-style-type: none;
+}
+body div div ul li:hover{
+    background-color: rgba(17, 16, 16, 0.363);
+    color: white;
+}
+body{
+    background-color: rgba(90, 90, 90, 0.966)
+}
+body div div ul.listingul li{
+    
+    text-decoration: none;
+    padding: 1pc;
+    color: whitesmoke;
+    padding-left: -1pc;  
+}
+body div input{
+    margin-left: 10%;
+    
+    margin-bottom: 2%;
+    width: 65%;
+    padding: 1%;
+    border-radius: 4pc;
+}
+
+body div .mybtn{
+    padding: 1%;
+    margin: 1%;
+    border-radius: 20pc;
+    width: 10%
+}
+div ul.listingul{
+    padding: 1pc;
+    list-style-type: none;
+}
+center li{
+    list-style-type: none;
+    color: aliceblue;
+}

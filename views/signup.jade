@@ -1,0 +1,29 @@
+html
+head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+             
+    title Euphony-SignUp
+             
+    link(rel='stylesheet', href='bootstrap.min.css')
+             
+    link(rel='stylesheet', href='/stylesheets/test1.css')
+       
+  body.whole
+    div
+      .Euphony-Signup
+        img.profile-img-card(src='/images/user.png')
+                         
+        p.signup-space
+                         
+        form.form-signin(name='Signup',action='SignUp' method='post')
+          input#inputEmail.form-control(type='email', name='email', required='', placeholder='E-Mail Address', autofocus='')
+                               
+          input#inputPassword.form-control(type='password', name='pass', required='', placeholder='Password')
+                               
+          input#inputPassword.form-control(type='password', name='conpass', required='', placeholder='Confirm Password')
+                               
+          p.signup-space
+                               
+          button.btn.btn-primary.btn-block.btn-lg.btn-signin(type='submit') Sign Up

@@ -1,0 +1,126 @@
+html
+  head
+    link(href='/Main.css', rel='stylesheet')
+             
+    script(src='http://code.jquery.com/jquery-2.1.1.min.js')
+       
+  body
+    #bg
+      #blacklayer
+                   
+      img(src='/Poster1.jpg')
+             
+    #main
+      #image
+        img(src='/Poster1.jpg')
+                   
+      #Player
+        #songTitle
+                         
+        #buttons
+          button#pre(onclick='pre()')
+            img(src='/Pre.jpg ', height='30px', width='30px')
+                               
+          button#prevfor(onclick='prevfor()')
+            img(src='/back.png', height='30px', width='30px')
+                               
+          button#play(onclick='playOrPauseSong()')
+            img(src='/Play.png', height='30px', width='30px')
+                               
+          button#nextfor(onclick='nextfor()')
+            img(src='/fast.jpg', height='30px', width='30px')
+                               
+          button#next(onclick='next()')
+            img(src='/Next.png', height='30px', width='30px')
+                         
+        #seek-bar
+          #fill
+                               
+          #handle
+             
+    script(type='text/javascript').
+      var sngs= "#{SongName}";
+      var sng='/';
+      sng+= sngs+'.mp3';
+      console.log(sng);
+      var songs= [sng];
+      var poster=["/Poster1.jpg"];
+      var songTitle=document.getElementById("songTitle");
+      var fillBar=document.getElementById("fill");
+      var song=new Audio();
+      var currentSong=0;
+      window.onload=playSong;
+      var div = document.getElementById('seek-bar');
+      function playSong()
+      {
+      song.src=songs[currentSong];
+      songTitle.textContent=songs[currentSong];
+      song.play();
+      }
+      function playOrPauseSong(){
+      if(song.paused){
+      song.play();
+      $("#play img").attr("src","/Puse.png");
+      }
+      else{
+      song.pause();
+      $("#play img").attr("src","/Play.png");
+      }
+      }
+      song.addEventListener('timeupdate',function(){
+      var position=song.currentTime/song.duration;
+      fillBar.style.width=position*100 +'%';
+      });
+      song.onended=function(){
+      playSong();
+      }
+      function prevfor()
+      {
+      song.currentTime-=5;
+      }
+      function nextfor()
+      {
+      song.currentTime+=5;
+      }
+      function next()
+      {
+      currentSong++;
+      if(currentSong>0)
+      {
+      currentSong=0;
+      }
+      playSong();
+      $("#play img").attr("src","/Puse.png");
+      $("#image img").attr("src",poster[currentSong]);
+      $("#bg img").attr("src",poster[currentSong]);
+      }
+      function pre()
+      {
+      currentSong--;
+      if(currentSong<0)
+      {
+      currentSong=0;
+      }
+      playSong();
+      $("#play img").attr("src","/Puse.png");
+      $("#image img").attr("src",poster[currentSong]);
+      $("#bg img").attr("src",poster[currentSong]);
+      }
+      document.addEventListener('keydown', function(event){
+        if(event.keyCode==37)
+        {
+            prevfor();
+        }
+        else if(event.keyCode==39)
+        {
+            nextfor();
+        }
+        else if(event.keyCode==38)
+        {
+            pre();
+        }    
+        else if(event.keyCode==40)
+        {
+            next();
+        }
+       });   

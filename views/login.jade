@@ -1,0 +1,29 @@
+html
+head
+    meta(charset='utf-8')
+  
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    title Euphony-Login
+
+    link(rel='stylesheet', href='bootstrap.min.css')
+                 
+    link(rel='stylesheet', href='/stylesheets/test.css')
+      
+  body.whole
+    div
+      .Euphony-Login
+        img.profile-img-card(src='/images/user.png')
+                         
+        p.login-space
+                         
+        form.form-login(name="LOGIN",method="post",action="/Euphonylogin")
+          input#inputEmail.form-control(type='email',name='email' required='', placeholder='E-Mail Address', autofocus='')
+                               
+          input#inputPassword.form-control(type='password',name='pass', required='', placeholder='Password')
+                               
+          p.login-space
+                               
+          button.btn.btn-primary.btn-block.btn-lg.btn-signin(type='submit') Sign in
+                         
+        a.forgot-password(href='signup') Not a user Sign-Up 

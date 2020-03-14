@@ -1,0 +1,9 @@
+extend layout
+
+block content
+    h3.
+        Albums
+    ul
+        each user , i in albumlist
+            li#album_list_item
+                a(href='alb/#{user._id}') #{user.albumname} is of user #{user.user}

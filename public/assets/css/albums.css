@@ -1,0 +1,39 @@
+
+.front {
+    position: relative;
+   margin: 3.4%;
+   margin-top:0; 
+  }
+  
+  .front img {
+      display: block;
+      width: 205px;
+      height: 210px;
+      border-radius: 20pc;
+      border-width: 4px;
+      border:7px solid white; 
+  }
+  .front .text img{
+          width: 30px;
+          height: 30px;
+          background: #008CBA;
+          border: none;
+  }
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.name{
+    text-align:center ;
+    color: white;
+    margin-top: 4.5%;
+    font-family:Mija,Georgia,serif;
+    font-weight: bold;
+}
